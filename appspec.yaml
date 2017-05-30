@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+    - source: test/index.html
+      destination: /var/www/html/
+permissions:
+    - object: /var/www/html/index.html
+      pattern: "**"
+      mode: 775
+      type:
+        - file
