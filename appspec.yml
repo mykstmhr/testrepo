@@ -9,10 +9,10 @@ permissions:
       mode: 775
       type:
         - file
-hooks:
-  ApplicationStop:
-    - location: scripts/elb/deregister_from_elb.sh
-    - location: scripts/elb/stop_httpd.sh
-  ApplicationStart:
-    - location: scripts/elb/start_httpd.sh
-    - location: scripts/elb/register_with_elb.sh
+#hooks:
+#  ApplicationStop:
+#    - location: scripts/elb/deregister_from_elb.sh
+#    - location: scripts/elb/stop_httpd.sh
+#  ApplicationStart:
+#    - location: scripts/elb/start_httpd.sh
+#    - location: scripts/elb/register_with_elb.sh
