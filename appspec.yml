@@ -3,8 +3,6 @@ os: linux
 files:
     - source: test/index.html
       destination: /var/www/html/
-    - source: scripts/elb/
-      destination: /tmp/
 permissions:
     - object: /var/www/html/index.html
       pattern: "**"
@@ -13,8 +11,8 @@ permissions:
         - file
 hooks:
   ApplicationStop:
-    - location: /tmp/deregister_from_elb.sh
-    - location: /tmp/stop_httpd.sh
+    - location: scripts/elb/deregister_from_elb.sh
+    - location: scripts/elb/stop_httpd.sh
   ApplicationStart:
-    - location: /tmp/start_httpd.sh
-    - location: /tmp/register_with_elb.sh
+    - location: scripts/elb/start_httpd.sh
+    - location: scripts/elb/register_with_elb.sh
