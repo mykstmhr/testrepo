@@ -3,7 +3,7 @@ os: linux
 files:
     - source: test/index.html
       destination: /var/www/html/
-    - source: scripts/elb/*
+    - source: scripts/elb/
       destination: /tmp/
 permissions:
     - object: /var/www/html/index.html
